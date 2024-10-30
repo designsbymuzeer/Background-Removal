@@ -11,7 +11,7 @@ import '../styles/globals.css';
 
 const HomePage: React.FC = () => {
     const [feedback, setFeedback] = useState('');
-    const [isLoading, setIsLoading] = useState(false);
+    
     const [imageUrl, setImageUrl] = useState<string | null>(null);
     const [processedImageUrl, setProcessedImageUrl] = useState<string | null>(null);
 
@@ -24,7 +24,7 @@ const HomePage: React.FC = () => {
 
         const url = URL.createObjectURL(file);
         setImageUrl(url);
-        setIsLoading(true);
+        
         setFeedback('');
 
         try {
@@ -36,7 +36,7 @@ const HomePage: React.FC = () => {
             console.error('Error removing background:', err);
             setFeedback('Error removing background.');
         } finally {
-            setIsLoading(false);
+            
         }
     };
 
